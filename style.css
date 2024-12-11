@@ -512,119 +512,172 @@ section {
 }
 
 
-@media (max-width: 1068px) {
+@media (max-width: 1440px) {
     header {
-        flex-direction: column;
-        align-items: center;
         padding: 10px 20px;
+        font-size: 18px;
+    }
+    
+    .logo-container {
+        flex-direction: row;
     }
 
     .logo {
-        font-size: 1.5em;
-    }
-
-    .navigation {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
+        font-size: 2.2em;
     }
 
     .navigation a {
-        font-size: 1em;
-        padding: 5px 0;
-    }
-
-    .logo-image {
-        width: 40px;
-        height: auto;
+        font-size: 1.2em;
     }
 
     .main {
-        margin-top: 120px;
-        padding: 50px 20px;
-        text-align: center;
         background-size: cover;
-        background-attachment: fixed;
+        background-position: center;
     }
 
     .main h1 {
-        font-size: 2.5em;
-        margin-top: 20px;
+        font-size: 60px;
     }
 
     .main-btn {
         font-size: 18px;
-        padding: 0.75em 1.75em;
-        margin-top: 20px;
-    }
-
-    .social-icons a {
-        font-size: 1.5em;
-        padding: 0 8px;
+        padding: 12px 20px;
     }
 
     .menu-items {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-item {
+        width: 220px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.4em;
+    }
+
+    .price {
+        font-size: 1.3em;
+    }
+
+    .add-to-cart {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+
+    .social-icons a {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .logo-container {
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
+
+    .navigation a {
+        font-size: 1em;
+        padding: 10px 0;
+    }
+
+    .main {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    .main h1 {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+    .main-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
     }
 
     .menu-item {
         width: 100%;
-        box-shadow: none;
-    }
-
-    .menu-item img {
-        width: 100%;
+        margin-bottom: 20px;
     }
 
     .menu-item h3 {
-        font-size: 1.3em;
-    }
-
-    .menu-item p {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .price {
         font-size: 1.1em;
     }
 
-    .quantity-controls {
-        flex-direction: row;
+    .add-to-cart {
+        padding: 10px 20px;
     }
 
-    #locations {
-        padding: 50px 20px;
+    .social-icons a {
+        font-size: 1.5em;
+        margin: 0 8px;
     }
 
-    .branches {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 15px;
+    #cart-and-summary {
+        padding: 1rem;
+        max-width: 100%;
+        margin: 20px 0;
     }
 
-    .branch {
-        width: 100%;
-    }
-
-    .branch h3 {
-        font-size: 1.3em;
-    }
-
-    .branch p {
+    #cart-items li {
         font-size: 1em;
     }
 
-    .branch button {
-        padding: 10px 15px;
-    }
-
     #place-order-btn {
-        font-size: 1rem;
-        padding: 0.7rem 1.5rem;
+        font-size: 1.2em;
     }
 
-    .add-to-cart, .remove-from-cart {
+    .remove-from-cart {
+        font-size: 0.9em;
+    }
+
+    #locations h2 {
+        font-size: 2em;
+    }
+
+    .branches {
+        grid-template-columns: 1fr;
+    }
+
+    .branch {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .branch h3 {
+        font-size: 1.4em;
+    }
+
+    .branch p {
+        font-size: 0.9em;
+    }
+
+    .branch button {
         padding: 8px 15px;
+        font-size: 1em;
     }
 }
+
