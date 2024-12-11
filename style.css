@@ -1,4 +1,3 @@
-/* استيراد الخطوط */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* إعدادات عامة */
@@ -66,7 +65,7 @@ section {
 /* تنسيق القسم الرئيسي */
 .main {
     width: 100%;
-    min-height: 100vh;
+    min-height: 10vh;
     display: flex;
     align-items: center;
     background: url(images/Drink.JPG) no-repeat;
@@ -449,4 +448,56 @@ section {
 .cart-btn:hover {
     background-color: #5a3d99;
     transform: scale(1.05);
+}
+
+/* استعلامات وسائط للتكيف مع الشاشات الصغيرة */
+@media (max-width: 1060px) {
+    /* تقليل حجم الصورة في الخلفية على الأجهزة الصغيرة */
+    .main {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* تقليل حجم النص في العنوان الرئيسي */
+    .main h1 {
+        font-size: 50px;
+        margin-top: 50px;
+    }
+
+    /* تقليل حجم الأزرار */
+    .main-btn {
+        font-size: 16px;
+        padding: 0.8em 1.5em;
+    }
+
+    /* تقليل حجم الأيقونات الاجتماعية */
+    .social-icons a {
+        font-size: 1.5em;
+    }
+}
+
+/* استعلام وسائط إضافي للأجهزة الأصغر (الشاشات من 480px أو أصغر) */
+@media (max-width: 480px) {
+    /* تقليل حجم الصورة بشكل أكبر */
+    .main {
+        background-size: cover;
+        background-position: top center;
+    }
+
+    /* تقليل حجم العنوان بشكل أكبر */
+    .main h1 {
+        font-size: 40px;
+        margin-top: 30px;
+    }
+
+    /* تقليل حجم الأزرار بشكل أكبر */
+    .main-btn {
+        font-size: 14px;
+        padding: 0.6em 1.2em;
+    }
+
+    /* تقليل حجم الأيقونات الاجتماعية بشكل أكبر */
+    .social-icons a {
+        font-size: 1.3em;
+    }
 }
