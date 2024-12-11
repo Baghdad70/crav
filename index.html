@@ -185,10 +185,6 @@
             </div>
         </div>
     </section>
-
-</section>
-
-
     <div class="cart-summary-section" style="display: flex; justify-content: space-between;"></div>
     <div class="section" id="cart-and-summary">
         <h2>Your Cart</h2>
@@ -218,7 +214,6 @@
                         <input type="password" id="card-cvv" maxlength="3" placeholder="CVV" required>
                     </div>
                 </div>
-                
             </div>
             <button id="place-order-btn">Place Order</button>
         </div>
@@ -229,9 +224,6 @@
         <div id="previous-orders" class="previous-orders">
         </div>
     </div>
-    
-
-</script>
 
 <script>
     function showConfirmationMessage() {
@@ -248,26 +240,27 @@
         const quantityDisplay = menuItem.querySelector('.quantity');
 
         decreaseButton.addEventListener('click', () => {
-            let currentQuantity = parseInt(quantityDisplay.textContent);
+            const currentQuantity = parseInt(quantityDisplay.textContent);
             if (currentQuantity > 1) {
                 quantityDisplay.textContent = currentQuantity - 1;
             }
         });
 
         increaseButton.addEventListener('click', () => {
-            let currentQuantity = parseInt(quantityDisplay.textContent);
+            const currentQuantity = parseInt(quantityDisplay.textContent);
             quantityDisplay.textContent = currentQuantity + 1;
         });
 
-        const addToCartButton = menuItem.querySelector('.add-to-cart');
-        addToCartButton.addEventListener('click', () => {
+        menuItem.querySelector('.add-to-cart').addEventListener('click', () => {
             const itemName = menuItem.querySelector('h3').textContent;
             const itemPrice = parseFloat(menuItem.querySelector('.price').dataset.price);
             const quantity = parseInt(quantityDisplay.textContent);
 
             addToCart(itemName, itemPrice, quantity);
+            showConfirmationMessage();
         });
     });
+
     function addToCart(itemName, itemPrice, quantity) {
         const cartItemsContainer = document.getElementById('cart-items');
         const emptyMessage = document.querySelector('.empty-message');
@@ -284,8 +277,7 @@
             quantityElement.textContent = currentQuantity + quantity;
 
             const itemTotalPriceElement = existingItem.querySelector('.item-total-price');
-            const newTotalPrice = (currentQuantity + quantity) * itemPrice;
-            itemTotalPriceElement.textContent = `${newTotalPrice.toFixed(2)} SAR`;  // Corrected here
+            itemTotalPriceElement.textContent = `${((currentQuantity + quantity) * itemPrice).toFixed(2)} SAR`;
         } else {
             const newItem = document.createElement('li');
             newItem.className = 'cart-item';
@@ -295,159 +287,49 @@
                 <span class="item-total-price">${(itemPrice * quantity).toFixed(2)} SAR</span>
                 (<span class="item-quantity">${quantity}</span>)
                 <button class="remove-from-cart">Remove</button>
-            `;  // Corrected here
+            `;
 
             newItem.querySelector('.remove-from-cart').addEventListener('click', () => {
-                removeFromCart(newItem, itemPrice, quantity);
+                removeFromCart(newItem, itemPrice);
             });
 
             cartItemsContainer.appendChild(newItem);
         }
 
-        showConfirmationMessage();
-
         updateSummary(itemPrice * quantity, quantity);
     }
 
-    function removeFromCart(itemElement, itemPrice, quantity) {
+    function removeFromCart(itemElement, itemPrice) {
         const quantityElement = itemElement.querySelector('.item-quantity');
         const currentQuantity = parseInt(quantityElement.textContent);
 
         if (currentQuantity > 1) {
-            // Decrease quantity and update total price
             quantityElement.textContent = currentQuantity - 1;
-
             const itemTotalPriceElement = itemElement.querySelector('.item-total-price');
-            const newTotalPrice = (currentQuantity - 1) * itemPrice;
-            itemTotalPriceElement.textContent = `${newTotalPrice.toFixed(2)} SAR`; // Corrected here
-
-            // Update summary
+            itemTotalPriceElement.textContent = `${((currentQuantity - 1) * itemPrice).toFixed(2)} SAR`;
             updateSummary(-itemPrice, -1);
         } else {
-            // Remove item completely
             itemElement.remove();
-            updateSummary(-itemPrice * quantity, -quantity);
+            updateSummary(-itemPrice * currentQuantity, -currentQuantity);
 
-            // Check if cart is empty and display "empty cart" message
-            const cartItemsContainer = document.getElementById('cart-items');
-            if (!cartItemsContainer.querySelector('.cart-item')) {
+            if (!document.querySelector('.cart-item')) {
                 const emptyMessage = document.createElement('li');
                 emptyMessage.className = 'empty-message';
                 emptyMessage.textContent = 'Your cart is empty';
-                cartItemsContainer.appendChild(emptyMessage);
+                document.getElementById('cart-items').appendChild(emptyMessage);
             }
         }
-
-        // Recalculate summary after item removal
-        recalculateSummary();
     }
 
-    // Function to update cart summary
     function updateSummary(priceChange, quantityChange) {
         const totalItemsElement = document.getElementById('total-items');
         const totalAmountElement = document.getElementById('total-amount');
 
-        // Increment or decrement total items
-        const currentItems = parseInt(totalItemsElement.textContent) || 0;
-        totalItemsElement.textContent = currentItems + quantityChange;
-
-        // Increment or decrement total amount
-        const currentAmount = parseFloat(totalAmountElement.textContent.replace(' SAR', '')) || 0;
-        const newAmount = currentAmount + priceChange;
-
-        // Ensure total amount is not negative
-        totalAmountElement.textContent = newAmount >= 0 ? `${newAmount.toFixed(2)} SAR` : '0.00 SAR'; // Corrected here
+        totalItemsElement.textContent = parseInt(totalItemsElement.textContent) + quantityChange;
+        totalAmountElement.textContent = `${Math.max(0, parseFloat(totalAmountElement.textContent) + priceChange).toFixed(2)} SAR`;
     }
 
-    // Function to recalculate the entire cart summary
-    function recalculateSummary() {
-        const cartItemsContainer = document.getElementById('cart-items');
-        let totalAmount = 0;
-        let totalItems = 0;
-
-        cartItemsContainer.querySelectorAll('.cart-item').forEach(item => {
-            const itemPrice = parseFloat(item.querySelector('.item-total-price').textContent.replace(' SAR', ''));
-            const itemQuantity = parseInt(item.querySelector('.item-quantity').textContent);
-
-            totalAmount += itemPrice;
-            totalItems += itemQuantity;
-        });
-
-        // Update total items and amount
-        document.getElementById('total-items').textContent = totalItems;
-        document.getElementById('total-amount').textContent = `${totalAmount.toFixed(2)} SAR`;  // Corrected here
-    }
-</script>
-
-<script>
-    // Function to handle placing an order
-    document.getElementById('place-order-btn').addEventListener('click', function () {
-        const cartItemsContainer = document.getElementById('cart-items');
-        const previousOrdersContainer = document.getElementById('previous-orders');
-        const emptyOrdersMessage = document.querySelector('.empty-orders');
-
-        // Check if cart is empty
-        if (!cartItemsContainer.querySelector('.cart-item')) {
-            alert('Your cart is empty. Please add items before placing an order.');
-            return;
-        }
-
-        // Remove "No previous orders" message if it exists
-        if (emptyOrdersMessage) {
-            emptyOrdersMessage.remove();
-        }
-
-        // Generate order details
-        const orderItems = Array.from(cartItemsContainer.querySelectorAll('.cart-item')).map(item => {
-            const itemName = item.querySelector('.item-name').textContent;
-            const itemQuantity = item.querySelector('.item-quantity').textContent;
-            const itemTotalPrice = item.querySelector('.item-total-price').textContent;
-            return `<li>${itemName} (x${itemQuantity}) - ${itemTotalPrice}</li>`;
-        }).join('');
-
-        // Generate unique order ID and timestamp
-        const orderId = `ORD-${Date.now().toString().slice(-6)}`;
-        const orderDate = new Date().toLocaleString();
-
-        // Create order element
-        const newOrder = document.createElement('div');
-        newOrder.className = 'order';
-        newOrder.innerHTML = `
-            <h4>Order ID: ${orderId}</h4>
-            <p>Date: ${orderDate}</p>
-            <ul>${orderItems}</ul>
-            <hr>
-        `;
-
-        // Append order to previous orders section
-        previousOrdersContainer.appendChild(newOrder);
-
-        // Clear the cart
-        cartItemsContainer.innerHTML = '<li class="empty-message">Your cart is empty</li>';
-
-        // Reset summary
-        document.getElementById('total-items').textContent = '0';
-        document.getElementById('total-amount').textContent = '0.00 SAR';
-
-        alert('Your order has been placed successfully!');
-    });
-</script>
-
-<script>
-    // Toggle the credit card form based on selected payment method
-    document.querySelectorAll('input[name="payment-method"]').forEach((radio) => {
-        radio.addEventListener('change', function () {
-            const creditCardForm = document.getElementById('credit-card-form');
-            if (this.value === 'credit-card') {
-                creditCardForm.style.display = 'block';
-            } else {
-                creditCardForm.style.display = 'none';
-            }
-        });
-    });
-
-    // Add validation for credit card payment on place order
-    document.getElementById('place-order-btn').addEventListener('click', function () {
+    document.getElementById('place-order-btn').addEventListener('click', () => {
         const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked');
         if (!selectedPaymentMethod) {
             alert('Please select a payment method.');
@@ -459,55 +341,79 @@
             const cardExpiry = document.getElementById('card-expiry').value.trim();
             const cardCVV = document.getElementById('card-cvv').value.trim();
 
-            if (!cardNumber || cardNumber.length !== 16 || isNaN(cardNumber)) {
-                alert('Please enter a valid 16-digit card number.');
-                return;
-            }
-
-            if (!cardExpiry) {
-                alert('Please enter the card expiry date.');
-                return;
-            }
-
-            if (!cardCVV || cardCVV.length !== 3 || isNaN(cardCVV)) {
-                alert('Please enter a valid 3-digit CVV.');
+            if (!cardNumber || cardNumber.length !== 16 || isNaN(cardNumber) || !cardExpiry || !cardCVV || cardCVV.length !== 3 || isNaN(cardCVV)) {
+                alert('Please provide valid credit card details.');
                 return;
             }
         }
-        // If all validations pass, proceed with placing the order
+
+        if (!document.querySelector('.cart-item')) {
+            alert('Your cart is empty.');
+            return;
+        }
+
+        const orderDetails = Array.from(document.querySelectorAll('.cart-item')).map(item => {
+            const name = item.querySelector('.item-name').textContent;
+            const quantity = item.querySelector('.item-quantity').textContent;
+            const total = item.querySelector('.item-total-price').textContent;
+            return `<li>${name} (x${quantity}) - ${total}</li>`;
+        }).join('');
+
+        const orderId = `ORD-${Date.now().toString().slice(-6)}`;
+        const orderDate = new Date().toLocaleString();
+
+        const order = document.createElement('div');
+        order.className = 'order';
+        order.innerHTML = `
+            <h4>Order ID: ${orderId}</h4>
+            <p>Date: ${orderDate}</p>
+            <ul>${orderDetails}</ul>
+        `;
+
+        document.getElementById('previous-orders').appendChild(order);
+
+        document.getElementById('cart-items').innerHTML = '<li class="empty-message">Your cart is empty</li>';
+        document.getElementById('total-items').textContent = '0';
+        document.getElementById('total-amount').textContent = '0.00 SAR';
+
         alert('Your order has been placed successfully!');
+    });
+
+    document.querySelectorAll('input[name="payment-method"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            document.getElementById('credit-card-form').style.display = radio.value === 'credit-card' ? 'block' : 'none';
+        });
     });
 </script>
 
 
-
-    <section id="location">
-        <h1 class="t-location" > location </h1>
-        <div class="branches">
-            <div class="branch">
-                <h3>Branch Al-Hizam, Ad-Dhalea</h3>
-                <button onclick="openLocation('https://maps.app.goo.gl/Mud8TY7DJ9FPDLXRA?g_st=ic')">Get Directions</button>
-            </div>
-            <div class="branch">
-                <h3>Branch Al-Laqayt</h3>
-                <button onclick="openLocation('https://maps.app.goo.gl/6ZCnnLh7VaYRg47u6?g_st=ic')">Get Directions</button>
-            </div>
-            <div class="branch">
-                <h3>Branch Qara</h3>
-                <button onclick="openLocation('https://maps.app.goo.gl/gGEtbxDgmVyXMNYn6?g_st=ic')">Get Directions</button>
-            </div>
-            <div class="branch">
-                <h3>Branch AlQurayyat</h3>
-                <button onclick="openLocation('https://maps.app.goo.gl/NkXN6wH1opzxGbXa6?g_st=ic')">Get Directions</button>
-            </div>
+<section id="location">
+    <h1 class="t-location" > location </h1>
+    <div class="branches">
+        <div class="branch">
+            <h3>Branch Al-Hizam, Ad-Dhalea</h3>
+            <button onclick="openLocation('https://maps.app.goo.gl/Mud8TY7DJ9FPDLXRA?g_st=ic')">Get Directions</button>
         </div>
-    </section>
+        <div class="branch">
+            <h3>Branch Al-Laqayt</h3>
+            <button onclick="openLocation('https://maps.app.goo.gl/6ZCnnLh7VaYRg47u6?g_st=ic')">Get Directions</button>
+        </div>
+        <div class="branch">
+            <h3>Branch Qara</h3>
+            <button onclick="openLocation('https://maps.app.goo.gl/gGEtbxDgmVyXMNYn6?g_st=ic')">Get Directions</button>
+        </div>
+        <div class="branch">
+            <h3>Branch AlQurayyat</h3>
+            <button onclick="openLocation('https://maps.app.goo.gl/NkXN6wH1opzxGbXa6?g_st=ic')">Get Directions</button>
+        </div>
+    </div>
+</section>
 
-    <script>
-        function openLocation(url) {
-            window.open(url, '_blank');
-        }
-    </script>
+<script>
+    function openLocation(url) {
+        window.open(url, '_blank');
+    }
+</script>
 
 <script>
 document.querySelector(".social-icons a:nth-child(1)").addEventListener("click", function(event) {
