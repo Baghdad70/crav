@@ -562,4 +562,57 @@ section {
         text-align: center;
         margin: 5px 0;
     }
+    @media (max-width: 1060px) {
+        /* تحسين تنسيق الصورة في قسم المين */
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
     
+        .main img {
+            width: 80%; /* حدد عرض الصورة على 80% من العرض المتاح */
+            max-width: 600px; /* تحديد الحد الأقصى لحجم الصورة */
+            height: auto; /* تأكد من الحفاظ على الأبعاد الأصلية */
+            object-fit: contain; /* تحسين عرض الصورة دون تشويه */
+            margin-bottom: 20px; /* إضافة مسافة أسفل الصورة */
+        }
+    
+        /* تنسيق الأصناف داخل قسم المنيو */
+        .menu-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* توسيط الأصناف أفقياً */
+            gap: 20px; /* مسافة بين العناصر */
+            padding: 20px;
+        }
+    
+        .menu-item {
+            width: 30%; /* تأكد من أن الأصناف تشغل 30% من العرض */
+            text-align: center;
+            box-sizing: border-box;
+            padding: 10px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+    
+        .menu-item:hover {
+            transform: translateY(-10px); 
+        }
+    
+        @media (max-width: 768px) {
+            .menu-section {
+                justify-content: center; 
+            }
+    
+            .menu-item {
+                width: 80%; 
+            }
+        }
+    }
+    
+   
