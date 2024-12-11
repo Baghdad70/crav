@@ -1,3 +1,4 @@
+/* استيراد الخطوط */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* إعدادات عامة */
@@ -65,17 +66,20 @@ section {
 /* تنسيق القسم الرئيسي */
 .main {
     width: 100%;
-    min-height: 10vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(images/Drink.JPG) no-repeat;
-    background-size: cover;
-    background-color: #f3e6f2;
-    background-position: center;
-    background-attachment: fixed;
+    background: 
+        url(images/Drinks.JPG) no-repeat left top,  /* الصورة الأولى */
+        url(images/Drink.JPG) no-repeat right top;  /* الصورة الثانية */
+    background-size: 50%, 50%;  /* تحديد كل صورة لتشغل نصف المساحة */
+    background-color: #f3e6f2;  /* اللون الخلفي في حال لم تظهر الصورة */
+    background-attachment: fixed;  /* جعل الصورة ثابتة عند التمرير */
     flex-direction: column;
     text-align: center;
 }
+
+
 
 /* تنسيق العنوان في القسم الرئيسي */
 .main h1 {
@@ -430,7 +434,7 @@ section {
     margin-top: 5px;
 }
 
-/* تفاعل مع العناصر في السلة */
+
 .cart-btn {
     display: flex;
     align-items: center;
@@ -450,54 +454,22 @@ section {
     transform: scale(1.05);
 }
 
-/* استعلامات وسائط للتكيف مع الشاشات الصغيرة */
 @media (max-width: 1060px) {
-    /* تقليل حجم الصورة في الخلفية على الأجهزة الصغيرة */
     .main {
-        background-size: cover;
-        background-position: center center;
-    }
-
-    /* تقليل حجم النص في العنوان الرئيسي */
-    .main h1 {
-        font-size: 50px;
-        margin-top: 50px;
-    }
-
-    /* تقليل حجم الأزرار */
-    .main-btn {
-        font-size: 16px;
-        padding: 0.8em 1.5em;
-    }
-
-    /* تقليل حجم الأيقونات الاجتماعية */
-    .social-icons a {
-        font-size: 1.5em;
+        background: 
+            url(images/Drinks.JPG) no-repeat center center,  
+            url(images/Drink.JPG) no-repeat center center;  
+        background-size: cover, cover;  
+        background-position: center center;  
     }
 }
 
-/* استعلام وسائط إضافي للأجهزة الأصغر (الشاشات من 480px أو أصغر) */
 @media (max-width: 480px) {
-    /* تقليل حجم الصورة بشكل أكبر */
     .main {
-        background-size: cover;
-        background-position: top center;
-    }
-
-    /* تقليل حجم العنوان بشكل أكبر */
-    .main h1 {
-        font-size: 40px;
-        margin-top: 30px;
-    }
-
-    /* تقليل حجم الأزرار بشكل أكبر */
-    .main-btn {
-        font-size: 14px;
-        padding: 0.6em 1.2em;
-    }
-
-    /* تقليل حجم الأيقونات الاجتماعية بشكل أكبر */
-    .social-icons a {
-        font-size: 1.3em;
+        background: 
+            url(images/Drinks.JPG) no-repeat center center,  
+            url(images/Drink.JPG) no-repeat center center;  
+        background-size: cover, cover;  
+        background-position: center center;  
     }
 }
