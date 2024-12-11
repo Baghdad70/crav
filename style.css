@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #b588af;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.logo {
+    text-decoration: none;
+    color: #1e2043;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8em;
+    margin-right: auto;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #4a3c6c;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding-left: 20px;
+}
+
+.navigation a:hover {
+    color: #c4b5d5;
+}
+
+section {
+    padding: 100px 20px;
+    background-color: #f3e6f2;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(images/Drinks.JPG) no-repeat;
+    background-size: cover;
+    background-color: #f3e6f2;
+    background-position: center;
+    background-attachment: fixed;
+    flex-direction: column;
+    text-align: center;
+}
+
+.main h1 {
+    color: #231a49;
+    font-size: 70px; 
+    font-family: 'Times New Roman', sans-serif;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.main-btn {
+    color: aliceblue;
+    background-color: #6c4fbb;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    transition: 0.7s ease;
+}
+
+.main-btn:hover {
+    background-color: #5a3d99;
+    transform: scale(1.1);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #1e2043;
+    font-size: 2em;
+    padding: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #c4b5d5;
+}
+
+
+.menu-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    color: #4a3c6c;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.e-t, .s-t, .D-t {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    color: #4a3c6c;
+    text-align: center;
+}
+
+.s-t, .D-t {
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 1.3em;
+    color: #000000;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 230px;
+    margin: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    font-size: 1.5em;
+    color: #4a3c6c;
+    margin-top: 10px;
+}
+
+.menu-item p {
+    color: #6c4fbb;
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #231a49;
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background-color: #6c4fbb;
+    color: white;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-to-cart:hover {
+    background-color: #5a3d99;
+    transform: scale(1.05);
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.quantity-controls button:hover {
+    background-color: #f0f0f0;
+}
+
+.quantity-controls .quantity {
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+} 
+
+
+#cart-and-summary {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#cart-and-summary h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+.card {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.empty-message {
+    color: #999;
+    font-style: italic;
+}
+
+.summary-details {
+    margin-bottom: 1.5rem;
+}
+
+.payment-options label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+#credit-card-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#credit-card-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#place-order-btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#place-order-btn:hover {
+    background-color: #45a049;
+}
+
+.remove-from-cart {
+    margin-left: 10px;
+    padding: 0.1rem 0.2rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-from-cart:hover {
+    background-color: #d32f2f;
+}
+
+.cart-item .item-quantity {
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.cart-item .remove-from-cart {
+    margin-left: 10px;
+    padding: 0.3rem 0.6rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .remove-from-cart:hover {
+    background-color: #d32f2f;
+}
+
+#confirmation-message {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: auto;
+    max-width: 80%;
+}
+
+.previous-orders-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.previous-orders-title {
+    font-size: 2.5em;
+    color: #231a49;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.order-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.order-card .order-details {
+    flex: 1;
+}
+
+.order-card .order-details h4 {
+    font-size: 1.4em;
+    color: #231a49;
+    margin-bottom: 8px;
+}
+
+.order-card .order-details p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.order-card .order-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #231a49;
+    margin-bottom: 10px;
+}
+
+.order-card button {
+    background-color: #6c4fbb;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.order-card button:hover {
+    background-color: #5a3d99;
+    transform: scale(1.05);
+}
+
+.empty-message {
+    font-size: 1.2em;
+    color: #999;
+    font-style: italic;
+    text-align: center;
+}
+
+#locations {
+    text-align: center;
+    padding: 60px 30px;
+    background-color: #f3e6f2;
+}
+
+#locations h2 {
+    font-size: 2.5em;
+    color: #231a49;
+    margin-bottom: 30px;
+}
+
+.branches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.branch {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.branch:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.branch h3 {
+    font-size: 1.6em;
+    color: #4a3c6c;
+    margin-bottom: 10px;
+}
+
+.branch p {
+    font-size: 1em;
+    color: #6c4fbb;
+    margin-bottom: 15px;
+}
+
+.branch button {
+    background-color: #6c4fbb;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.branch button:hover {
+    background-color: #5a3d99;
+    transform: scale(1.05);
+}

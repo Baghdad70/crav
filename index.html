@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Crav cafe</title>
+</head>
+<body>
+    <div id="confirmation-message">
+        Product added to the cart successfully!
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/CR.jpg" alt="Crav Logo" class="logo-image">
+        </div>
+        <a href="#" class="logo">Crav</a>
+        <nav class="navigation">
+            <a href="#Menu">Menu</a>
+            <a href="#previous-orders">Previous Orders</a>
+            <a href="#location">Location</a>
+        </nav>
+    </header>
+
+    <section class="main">
+        <div>
+            <h1>Crav is life</h1>
+            <a href="#Menu" class="main-btn">Order now</a>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+     <section id="Menu" class="menu">
+        <div class="menu-header">
+            <h2 class="menu-title">Menu</h2>
+            <p class="e-t">enjoy with us</p>
+        </div>
+        <div class="menu-category">
+            <h5 class="s-t">Sweets</h5>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="images/Cookies.JPG" alt="Cake Item 1">
+                    <h3>Cookies</h3>
+                    <span class="price" data-price="7.75">7.75 SAR</span>
+                    <button class="add-to-cart" data-name="Cookies" data-price="7.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/Tart.JPG" alt="Cake Item 2">
+                    <h3>Pecan tart</h3>
+                    <span class="price" data-price="7.75">7.75 SAR</span>
+                    <button class="add-to-cart" data-name="Pecan tart" data-price="7.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/Markah.JPG" alt="Cake Item 3">
+                    <h3>Markah Sweet</h3>
+                    <span class="price" data-price="4.75">4.75 SAR</span>
+                    <button class="add-to-cart" data-name="Markah Sweet" data-price="4.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/tar.JPG" alt="Cake Item 3">
+                    <h3>Tiramisu</h3>
+                    <span class="price" data-price="9.75">9.75 SAR</span>
+                    <button class="add-to-cart" data-name="Tiramisu" data-price="9.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/MAGK.JPG" alt="Cake Item 5">
+                    <h3>Magic Bar</h3>
+                    <span class="price" data-price="7.75">7.75 SAR</span>
+                    <button class="add-to-cart" data-name="Magic Bar" data-price="7.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+            </div> 
+        </div>
+        <div class="menu-category">
+            <h3 class= "D-t" >Drinks</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="images/Cday.JPG" alt="Coffee Item 1">
+                    <h3>Coffee day</h3>
+                    <span class="price"data-price="4.75">4.75SAR</span>
+                    <button class="add-to-cart" data-name="Coffee day"data-price="4.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/cho.JPG" alt="Coffee Item 2">
+                    <h3>Ice Chocolate</h3>
+                    <span class="price"data-price="8.75">8.75SAR</span>
+                    <button class="add-to-cart" data-name="Ice Chocolate"data-price="8.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/kr.JPG" alt="Coffee Item 3">
+                    <h3>Ice Roselle</h3>
+                    <span class="price"data-price="8.75">8.75SAR</span>
+                    <button class="add-to-cart" data-name="Ice Roselle"data-price="8.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/V60.JPG" alt="Coffee Item 4">
+                    <h3>V60</h3>
+                    <span class="price"data-price="8.75">8.75SAR</span>
+                    <button class="add-to-cart" data-name="V60"data-price="8.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/TEA.JPG" alt="Coffee Item 5">
+                    <h3>Ice tea raspberry </h3>
+                    <span class="price"data-price="8.75">8.75SAR</span>
+                    <button class="add-to-cart" data-name="Ice tea raspberry"data-price="8.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/Rose.JPG" alt="Coffee Item 5">
+                    <h3>Coffee and rose holder</h3>
+                    <span class="price"data-price="34.75">34.75SAR</span>
+                    <button class="add-to-cart" data-name="Coffee and rose holder"data-price="34.75">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+                <div class="menu-item">
+                    <img src="images/Mg.JPG" alt="Coffee Item 6">
+                    <h3>Coffee Box</h3>
+                    <span class="price"data-price="39">39SAR</span>
+                    <button class="add-to-cart" data-name="Coffee Box"data-price="39">Add to Cart</button>
+                    <div class="quantity-controls">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+
+    <div class="cart-summary-section" style="display: flex; justify-content: space-between;"></div>
+    <div class="section" id="cart-and-summary">
+        <h2>Your Cart</h2>
+        <div class="card">
+            <h3>Your Order</h3>
+            <ul id="cart-items">
+                <li class="empty-message">Your cart is empty</li>
+            </ul>
+        </div>
+    
+        <h2>Order Summary</h2>
+        <div class="card order-summary">
+            <div class="summary-details">
+                <p>Total Items: <strong id="total-items">0</strong></p>
+                <p>Total Amount: <strong id="total-amount">0.00 SAR</strong></p>
+            </div>
+            <!-- Payment Options -->
+                <div class="payment-section">
+                    <h2>Payment Method</h2>
+                    <label><input type="radio" name="payment-method" value="credit-card"> Credit Card</label>
+                    <label><input type="radio" name="payment-method" value="cash"> Cash on Delivery</label>
+                
+                    <div id="credit-card-form" style="display: none; margin-top: 10px;">
+                        <h3>Enter Credit Card Details</h3>
+                        <input type="text" id="card-number" maxlength="16" placeholder="Card Number" required>
+                        <input type="month" id="card-expiry" required>
+                        <input type="password" id="card-cvv" maxlength="3" placeholder="CVV" required>
+                    </div>
+                </div>
+                
+            </div>
+            <button id="place-order-btn">Place Order</button>
+        </div>
+    </div>
+
+    <div class="previous-orders-section" style="flex: 1; margin-left: 20px;">
+        <h2>Previous Orders</h2>
+        <div id="previous-orders" class="previous-orders">
+        </div>
+    </div>
+    
+
+</script>
+
+<script>
+    function showConfirmationMessage() {
+        const message = document.getElementById('confirmation-message');
+        message.style.display = 'block'; 
+        setTimeout(() => {
+            message.style.display = 'none'; 
+        }, 3000);
+    }
+
+    document.querySelectorAll('.menu-item').forEach(menuItem => {
+        const decreaseButton = menuItem.querySelector('.decrease');
+        const increaseButton = menuItem.querySelector('.increase');
+        const quantityDisplay = menuItem.querySelector('.quantity');
+
+        decreaseButton.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityDisplay.textContent);
+            if (currentQuantity > 1) {
+                quantityDisplay.textContent = currentQuantity - 1;
+            }
+        });
+
+        increaseButton.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityDisplay.textContent);
+            quantityDisplay.textContent = currentQuantity + 1;
+        });
+
+        const addToCartButton = menuItem.querySelector('.add-to-cart');
+        addToCartButton.addEventListener('click', () => {
+            const itemName = menuItem.querySelector('h3').textContent;
+            const itemPrice = parseFloat(menuItem.querySelector('.price').dataset.price);
+            const quantity = parseInt(quantityDisplay.textContent);
+
+            addToCart(itemName, itemPrice, quantity);
+        });
+    });
+    function addToCart(itemName, itemPrice, quantity) {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const emptyMessage = document.querySelector('.empty-message');
+
+        if (emptyMessage) emptyMessage.remove();
+
+        const existingItem = Array.from(cartItemsContainer.children).find(item =>
+            item.querySelector('.item-name')?.textContent === itemName
+        );
+
+        if (existingItem) {
+            const quantityElement = existingItem.querySelector('.item-quantity');
+            const currentQuantity = parseInt(quantityElement.textContent);
+            quantityElement.textContent = currentQuantity + quantity;
+
+            const itemTotalPriceElement = existingItem.querySelector('.item-total-price');
+            const newTotalPrice = (currentQuantity + quantity) * itemPrice;
+            itemTotalPriceElement.textContent = `${newTotalPrice.toFixed(2)} SAR`;  // Corrected here
+        } else {
+            const newItem = document.createElement('li');
+            newItem.className = 'cart-item';
+
+            newItem.innerHTML = `
+                <span class="item-name">${itemName}</span> - 
+                <span class="item-total-price">${(itemPrice * quantity).toFixed(2)} SAR</span>
+                (<span class="item-quantity">${quantity}</span>)
+                <button class="remove-from-cart">Remove</button>
+            `;  // Corrected here
+
+            newItem.querySelector('.remove-from-cart').addEventListener('click', () => {
+                removeFromCart(newItem, itemPrice, quantity);
+            });
+
+            cartItemsContainer.appendChild(newItem);
+        }
+
+        showConfirmationMessage();
+
+        updateSummary(itemPrice * quantity, quantity);
+    }
+
+    function removeFromCart(itemElement, itemPrice, quantity) {
+        const quantityElement = itemElement.querySelector('.item-quantity');
+        const currentQuantity = parseInt(quantityElement.textContent);
+
+        if (currentQuantity > 1) {
+            // Decrease quantity and update total price
+            quantityElement.textContent = currentQuantity - 1;
+
+            const itemTotalPriceElement = itemElement.querySelector('.item-total-price');
+            const newTotalPrice = (currentQuantity - 1) * itemPrice;
+            itemTotalPriceElement.textContent = `${newTotalPrice.toFixed(2)} SAR`; // Corrected here
+
+            // Update summary
+            updateSummary(-itemPrice, -1);
+        } else {
+            // Remove item completely
+            itemElement.remove();
+            updateSummary(-itemPrice * quantity, -quantity);
+
+            // Check if cart is empty and display "empty cart" message
+            const cartItemsContainer = document.getElementById('cart-items');
+            if (!cartItemsContainer.querySelector('.cart-item')) {
+                const emptyMessage = document.createElement('li');
+                emptyMessage.className = 'empty-message';
+                emptyMessage.textContent = 'Your cart is empty';
+                cartItemsContainer.appendChild(emptyMessage);
+            }
+        }
+
+        // Recalculate summary after item removal
+        recalculateSummary();
+    }
+
+    // Function to update cart summary
+    function updateSummary(priceChange, quantityChange) {
+        const totalItemsElement = document.getElementById('total-items');
+        const totalAmountElement = document.getElementById('total-amount');
+
+        // Increment or decrement total items
+        const currentItems = parseInt(totalItemsElement.textContent) || 0;
+        totalItemsElement.textContent = currentItems + quantityChange;
+
+        // Increment or decrement total amount
+        const currentAmount = parseFloat(totalAmountElement.textContent.replace(' SAR', '')) || 0;
+        const newAmount = currentAmount + priceChange;
+
+        // Ensure total amount is not negative
+        totalAmountElement.textContent = newAmount >= 0 ? `${newAmount.toFixed(2)} SAR` : '0.00 SAR'; // Corrected here
+    }
+
+    // Function to recalculate the entire cart summary
+    function recalculateSummary() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        let totalAmount = 0;
+        let totalItems = 0;
+
+        cartItemsContainer.querySelectorAll('.cart-item').forEach(item => {
+            const itemPrice = parseFloat(item.querySelector('.item-total-price').textContent.replace(' SAR', ''));
+            const itemQuantity = parseInt(item.querySelector('.item-quantity').textContent);
+
+            totalAmount += itemPrice;
+            totalItems += itemQuantity;
+        });
+
+        // Update total items and amount
+        document.getElementById('total-items').textContent = totalItems;
+        document.getElementById('total-amount').textContent = `${totalAmount.toFixed(2)} SAR`;  // Corrected here
+    }
+</script>
+
+<script>
+    // Function to handle placing an order
+    document.getElementById('place-order-btn').addEventListener('click', function () {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const previousOrdersContainer = document.getElementById('previous-orders');
+        const emptyOrdersMessage = document.querySelector('.empty-orders');
+
+        // Check if cart is empty
+        if (!cartItemsContainer.querySelector('.cart-item')) {
+            alert('Your cart is empty. Please add items before placing an order.');
+            return;
+        }
+
+        // Remove "No previous orders" message if it exists
+        if (emptyOrdersMessage) {
+            emptyOrdersMessage.remove();
+        }
+
+        // Generate order details
+        const orderItems = Array.from(cartItemsContainer.querySelectorAll('.cart-item')).map(item => {
+            const itemName = item.querySelector('.item-name').textContent;
+            const itemQuantity = item.querySelector('.item-quantity').textContent;
+            const itemTotalPrice = item.querySelector('.item-total-price').textContent;
+            return `<li>${itemName} (x${itemQuantity}) - ${itemTotalPrice}</li>`;
+        }).join('');
+
+        // Generate unique order ID and timestamp
+        const orderId = `ORD-${Date.now().toString().slice(-6)}`;
+        const orderDate = new Date().toLocaleString();
+
+        // Create order element
+        const newOrder = document.createElement('div');
+        newOrder.className = 'order';
+        newOrder.innerHTML = `
+            <h4>Order ID: ${orderId}</h4>
+            <p>Date: ${orderDate}</p>
+            <ul>${orderItems}</ul>
+            <hr>
+        `;
+
+        // Append order to previous orders section
+        previousOrdersContainer.appendChild(newOrder);
+
+        // Clear the cart
+        cartItemsContainer.innerHTML = '<li class="empty-message">Your cart is empty</li>';
+
+        // Reset summary
+        document.getElementById('total-items').textContent = '0';
+        document.getElementById('total-amount').textContent = '0.00 SAR';
+
+        alert('Your order has been placed successfully!');
+    });
+</script>
+
+<script>
+    // Toggle the credit card form based on selected payment method
+    document.querySelectorAll('input[name="payment-method"]').forEach((radio) => {
+        radio.addEventListener('change', function () {
+            const creditCardForm = document.getElementById('credit-card-form');
+            if (this.value === 'credit-card') {
+                creditCardForm.style.display = 'block';
+            } else {
+                creditCardForm.style.display = 'none';
+            }
+        });
+    });
+
+    // Add validation for credit card payment on place order
+    document.getElementById('place-order-btn').addEventListener('click', function () {
+        const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked');
+        if (!selectedPaymentMethod) {
+            alert('Please select a payment method.');
+            return;
+        }
+
+        if (selectedPaymentMethod.value === 'credit-card') {
+            const cardNumber = document.getElementById('card-number').value.trim();
+            const cardExpiry = document.getElementById('card-expiry').value.trim();
+            const cardCVV = document.getElementById('card-cvv').value.trim();
+
+            if (!cardNumber || cardNumber.length !== 16 || isNaN(cardNumber)) {
+                alert('Please enter a valid 16-digit card number.');
+                return;
+            }
+
+            if (!cardExpiry) {
+                alert('Please enter the card expiry date.');
+                return;
+            }
+
+            if (!cardCVV || cardCVV.length !== 3 || isNaN(cardCVV)) {
+                alert('Please enter a valid 3-digit CVV.');
+                return;
+            }
+        }
+        // If all validations pass, proceed with placing the order
+        alert('Your order has been placed successfully!');
+    });
+</script>
+
+
+
+    <section id="location">
+        <h1 class="t-location" > location </h1>
+        <div class="branches">
+            <div class="branch">
+                <h3>Branch Al-Hizam, Ad-Dhalea</h3>
+                <button onclick="openLocation('https://maps.app.goo.gl/Mud8TY7DJ9FPDLXRA?g_st=ic')">Get Directions</button>
+            </div>
+            <div class="branch">
+                <h3>Branch Al-Laqayt</h3>
+                <button onclick="openLocation('https://maps.app.goo.gl/6ZCnnLh7VaYRg47u6?g_st=ic')">Get Directions</button>
+            </div>
+            <div class="branch">
+                <h3>Branch Qara</h3>
+                <button onclick="openLocation('https://maps.app.goo.gl/gGEtbxDgmVyXMNYn6?g_st=ic')">Get Directions</button>
+            </div>
+            <div class="branch">
+                <h3>Branch AlQurayyat</h3>
+                <button onclick="openLocation('https://maps.app.goo.gl/NkXN6wH1opzxGbXa6?g_st=ic')">Get Directions</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function openLocation(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+
+<script>
+document.querySelector(".social-icons a:nth-child(1)").addEventListener("click", function(event) {
+    event.preventDefault(); 
+    window.open("https://www.instagram.com/crav.23", "_blank");
+});
+
+document.querySelector(".social-icons a:nth-child(2)").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.open("https://www.snapchat.com/add/crav.23", "_blank");
+});
+
+document.querySelector(".social-icons a:nth-child(3)").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.open("https://www.tiktok.com/@crav.23", "_blank");
+});
+</script>
+</body>
+</html>
