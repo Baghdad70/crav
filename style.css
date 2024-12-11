@@ -1,7 +1,5 @@
-/* استيراد الخطوط */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* إعدادات عامة */
 * {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -10,7 +8,6 @@
     scroll-behavior: smooth;
 }
 
-/* تنسيق الهيدر */
 header {
     background-color: #b588af;
     width: 100%;
@@ -23,7 +20,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* تنسيق الشعار */
 .logo-container {
     display: flex;
     align-items: center;
@@ -44,7 +40,6 @@ header {
     margin-right: auto;
 }
 
-/* تنسيق الروابط في الهيدر */
 .navigation a {
     text-decoration: none;
     color: #4a3c6c;
@@ -57,31 +52,26 @@ header {
     color: #c4b5d5;
 }
 
-/* تنسيق الأقسام */
 section {
     padding: 100px 20px;
     background-color: #f3e6f2;
 }
 
-/* تنسيق القسم الرئيسي */
 .main {
     width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     background: 
-        url(images/Drinks.JPG) no-repeat left top,  /* الصورة الأولى */
-        url(images/Drink.JPG) no-repeat right top;  /* الصورة الثانية */
-    background-size: 50%, 50%;  /* تحديد كل صورة لتشغل نصف المساحة */
-    background-color: #f3e6f2;  /* اللون الخلفي في حال لم تظهر الصورة */
-    background-attachment: fixed;  /* جعل الصورة ثابتة عند التمرير */
+        url(images/Drinks.JPG) no-repeat left top,  
+        url(images/Drink.JPG) no-repeat right top; 
+    background-size: 50%, 50%;  
+    background-color: #f3e6f2;  
+    background-attachment: fixed;  
     flex-direction: column;
     text-align: center;
 }
 
-
-
-/* تنسيق العنوان في القسم الرئيسي */
 .main h1 {
     color: #231a49;
     font-family: 'Times New Roman', sans-serif;
@@ -91,7 +81,6 @@ section {
     text-align: center;
 }
 
-/* تنسيق الأزرار في القسم الرئيسي */
 .main-btn {
     color: aliceblue;
     background-color: #6c4fbb;
@@ -112,7 +101,6 @@ section {
     transform: scale(1.1);
 }
 
-/* تنسيق الأيقونات الاجتماعية */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -130,10 +118,9 @@ section {
     color: #c4b5d5;
 }
 
-/* تنسيق العناوين في المنيو */
 .menu-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5em;
+    font-size: 15xp;
     color: #4a3c6c;
     text-align: center;
     margin-bottom: 10px;
@@ -152,7 +139,6 @@ section {
     color: #000000;
 }
 
-/* تنسيق العناصر في المنيو */
 .menu-items {
     display: flex;
     flex-wrap: wrap;
@@ -198,7 +184,6 @@ section {
     margin-bottom: 15px;
 }
 
-/* تنسيق زر إضافة إلى السلة */
 .add-to-cart {
     background-color: #6c4fbb;
     color: white;
@@ -215,7 +200,6 @@ section {
     transform: scale(1.05);
 }
 
-/* تنسيق عناصر التحكم في الكمية */
 .quantity-controls {
     display: flex;
     align-items: center;
@@ -247,7 +231,6 @@ section {
     text-align: center;
 }
 
-/* تنسيق عربة التسوق والتفاصيل */
 #cart-and-summary {
     margin: 2rem auto;
     padding: 1.5rem;
@@ -305,7 +288,6 @@ section {
     cursor: pointer;
 }
 
-/* تنسيق نموذج بطاقة الائتمان */
 #credit-card-form label {
     display: block;
     margin-bottom: 5px;
@@ -320,7 +302,6 @@ section {
     border-radius: 4px;
 }
 
-/* زر تأكيد الطلب */
 #place-order-btn {
     display: block;
     width: 100%;
@@ -338,7 +319,6 @@ section {
     background-color: #45a049;
 }
 
-/* إزالة من السلة */
 .remove-from-cart {
     margin-left: 10px;
     padding: 0.1rem 0.2rem;
@@ -354,7 +334,6 @@ section {
     background-color: #d32f2f;
 }
 
-/* تنسيق الرسالة بعد الطلب */
 #confirmation-message {
     display: none;
     background-color: #4CAF50;
@@ -373,7 +352,6 @@ section {
     max-width: 80%;
 }
 
-/* تنسيق قسم الطلبات السابقة */
 .previous-orders-section {
     margin-top: 20px;
     padding: 20px;
@@ -434,7 +412,6 @@ section {
     margin-top: 5px;
 }
 
-
 .cart-btn {
     display: flex;
     align-items: center;
@@ -454,17 +431,70 @@ section {
     transform: scale(1.05);
 }
 
-@media (max-width: 1060px) {
-    .main {
-        background: 
-            url(images/Drinks.JPG) no-repeat center center,  
-            url(images/Drink.JPG) no-repeat center center;  
-        background-size: cover, cover;  
-        background-position: center center;  
-    }
+#locations {
+    text-align: center;
+    padding: 60px 30px;
+    background-color: #f3e6f2;
 }
 
-@media (max-width: 480px) {
+#locations h2 {
+    font-size: 2.5em;
+    color: #231a49;
+    margin-bottom: 30px;
+}
+
+.branches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.branch {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.branch:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.branch h3 {
+    font-size: 1.6em;
+    color: #4a3c6c;
+    margin-bottom: 10px;
+}
+
+.branch p {
+    font-size: 1em;
+    color: #6c4fbb;
+    margin-bottom: 15px;
+}
+
+.branch button {
+    background-color: #6c4fbb;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.branch button:hover {
+    background-color: #5a3d99;
+    transform: scale(1.05);
+}  
+
+@media (max-width: 1060px), (max-width: 480px) {
     .main {
         background: 
             url(images/Drinks.JPG) no-repeat center center,  
