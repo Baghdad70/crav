@@ -562,8 +562,6 @@ section {
         text-align: center;
         margin: 5px 0;
     }
-   @media (max-width: 1060px) {
-    /* تحسين تنسيق الصورة في قسم المين */
     .main {
         display: flex;
         flex-direction: column;
@@ -571,14 +569,16 @@ section {
         justify-content: center;
         padding: 20px;
         text-align: center;
+}
     }
 
     .main img {
-        width: 30%; /* تصغير الصورة إلى 60% من العرض المتاح */
-        max-width: 150px; /* تحديد الحد الأقصى للعرض */
-        height: auto; /* تأكد من الحفاظ على الأبعاد الأصلية */
-        object-fit: contain; /* اجعل الصورة داخل الحاوية بشكل ملائم دون تشويه */
-        margin-bottom: 20px; /* إضافة مسافة أسفل الصورة */
+        width: 70%; 
+        max-width: 100px;
+        height: auto;
+        object-fit: contain; 
+        margin-bottom: 20px; 
+}
     }
 
     /* باقي التنسيقات */
@@ -591,7 +591,7 @@ section {
     }
 
     .menu-item {
-        width: 30%;
+        width: 100%;
         text-align: center;
         box-sizing: border-box;
         padding: 10px;
