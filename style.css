@@ -516,6 +516,11 @@ section {
     .main h1 {
         font-size: 40px;
     }
+    .main {
+        background-size: contain; 
+        background-position: top;
+        background-attachment: scroll; 
+    }
 
     .main-btn {
         font-size: 18px;
